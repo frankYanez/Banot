@@ -4,6 +4,8 @@ Una página web super atractiva, minimalista pero futurística para una empresa 
 
 ## ✨ Características
 
+URL: `https://frankyanez.github.io/Banot/`
+
 - **🎨 Diseño Futurístico**: Interfaz minimalista con detalles dorados y fondo oscuro
 - **⚡ Animaciones 3D CSS**: Elementos 3D fluidos sin dependencias de JavaScript pesado
 - **🔮 Glassmorphism**: Efectos de cristal moderno en cards y elementos UI
