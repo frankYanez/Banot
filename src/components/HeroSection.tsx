@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from 'react'
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion'
+import BackgroundBeams from '@/components/visual/BackgroundBeams'
 
 // 3D Neural Network Component (CSS Based)
 function NeuralNetwork3D() {
@@ -15,7 +16,7 @@ function NeuralNetwork3D() {
   }))
 
   return (
-    <div className="relative w-96 h-96 flex items-center justify-center">
+    <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 flex items-center justify-center">
       {/* Central Core */}
       <motion.div
         className={`absolute w-24 h-24 rounded-full bg-gradient-to-br from-gold-light to-gold-base flex items-center justify-center shadow-2xl ${
@@ -195,16 +196,21 @@ export default function HeroSection() {
         />
       </div>
 
-      {/* 3D CSS Animations */}
-      <div className="absolute inset-0 z-10 opacity-70 flex items-center justify-center">
+      {/* 3D CSS Animations (hidden on mobile) */}
+      <div className="absolute inset-0 z-10 opacity-70 hidden md:flex items-center justify-center">
         <div className="relative w-full h-full">
           <NeuralNetwork3D />
           <HexagonRing />
         </div>
       </div>
 
+      {/* Animated Beams Background */}
+      <BackgroundBeams />
+
       {/* Floating Particles */}
-      <FloatingParticles />
+      <div className="opacity-60 md:opacity-100">
+        <FloatingParticles />
+      </div>
 
       {/* Main Content */}
       <motion.div 

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Smartphone, Globe, ShoppingCart, Brain, ArrowRight, Sparkles } from 'lucide-react'
+import { FancyCard } from '@/components/ui/fancy-card'
 
 const services = [
   {
@@ -113,9 +114,9 @@ export default function ServicesSection() {
               whileHover={{ y: -8 }}
               className="group relative"
             >
-              <div className="glass-card gradient-gold-border glow-hover h-full flex flex-col overflow-hidden">
+              <FancyCard className="h-full flex flex-col overflow-hidden">
                 {/* Image Header */}
-                <div className="relative h-48 overflow-hidden rounded-lg mb-6">
+                <div className="relative h-40 sm:h-48 md:h-56 overflow-hidden rounded-lg mb-6">
                   <img 
                     src={service.image}
                     alt={service.title}
@@ -132,7 +133,7 @@ export default function ServicesSection() {
                 </div>
 
                 {/* Content */}
-                <div className="flex-1 flex flex-col">
+                <div className="flex-1 flex flex-col px-6 pb-6">
                   <h3 className="text-xl font-heading font-semibold text-text-primary mb-3 group-hover:text-gold-base transition-colors duration-300">
                     {service.title}
                   </h3>
@@ -167,7 +168,7 @@ export default function ServicesSection() {
                     <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover/btn:translate-x-1" />
                   </motion.button>
                 </div>
-              </div>
+              </FancyCard>
 
               {/* Hover Glow Effect */}
               <div className="absolute inset-0 rounded-card opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
