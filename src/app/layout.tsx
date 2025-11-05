@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Poppins, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
+import { UISettingsProvider } from '@/components/providers/ui-settings-provider'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -56,7 +57,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es" className={`dark ${inter.variable} ${poppins.variable} ${jetbrains.variable}`}>
+    <html
+      lang="es"
+      className={`dark ${inter.variable} ${poppins.variable} ${jetbrains.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -65,7 +70,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       </head>
       <body className="font-sans antialiased">
-        {children}
+        <UISettingsProvider>{children}</UISettingsProvider>
       </body>
     </html>
   )
